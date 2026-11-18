@@ -18,7 +18,7 @@ def playmusic(song_name):
 
     settings = {
         'format': 'bestaudio/best',
-        'outtmpl': 'current_song.%(ext)s',  # Renamed from calinan_sarki
+        'outtmpl': 'current_song.%(ext)s',
         'default_search': 'ytsearch',   
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
@@ -60,7 +60,7 @@ def download(song_name):
     try:
         with yt_dlp.YoutubeDL(settings) as ydl:
             ydl.download([song_name])
-        print("Song downloaded successfully.") # Fixed typo
+        print("Song downloaded successfully.")
     except Exception as e:
         print(f"Something went wrong: {e}")
 
@@ -74,14 +74,14 @@ while True:
     print("2. Download a song (MP3)")
     print("q. Quit")
 
-    choose = input("Enter your choice: ") # Translated
+    choose = input("Enter your choice: ")
     
     if choose == '1':
-         search = input("Enter song name: ") # Translated
+         search = input("Enter song name: ")
          playmusic(search)
          input("Press Enter to continue...")
     elif choose == '2':
-         search = input("Enter song name: ") # Translated
+         search = input("Enter song name: ")
          download(search)
          input("Press Enter to continue...")
     elif choose == 'q':
